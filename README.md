@@ -1,6 +1,8 @@
 # dm
 Simple script for music install using yt-dlp
 
+UPDATED TO 0.2
+
 WHAT DO YOU NEED FOR WORK?
 
 To work dm you need all the tools for working yt-dlp and yt-dlp itself
