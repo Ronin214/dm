@@ -4,7 +4,7 @@ import os
 
 
 if argv[1] == "-h" or argv[1] == "-help" :
-    print("dm {url} = dowload audio file")
+    print("dm {url} -dm || -dowloadMusic = dowload audio file")
 
     print("\n-dv || -dowloadVideo = dowload video")
     print("exemple = dm {url} -dv = dowload video file")
@@ -42,7 +42,7 @@ else :
     if argv[2] == "-dv" or argv[2] == "-dowloadVideo" :
         ytDlpPrefix = "--embed-thumbnail --embed-metadata"
     
-    else :
+    elif argv[2] == "-dm" or argv[2] == "-dowloadMusic" :
         ytDlpPrefix = "-x --audio-format mp3 --embed-thumbnail --embed-metadata"
 
     os.system(f"yt-dlp {ytDlpPrefix} {url}")
