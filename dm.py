@@ -39,10 +39,6 @@ else :
 
     url = argv[1]
 
-    if argv[2] == "-dv" or argv[2] == "-dowloadVideo" :
-        ytDlpPrefix = "--embed-thumbnail --embed-metadata"
-    
-    elif argv[2] == "-dm" or argv[2] == "-dowloadMusic" :
-        ytDlpPrefix = "-x --audio-format mp3 --embed-thumbnail --embed-metadata"
+    ytDlpPrefix = "-x --audio-format mp3 --embed-thumbnail --embed-metadata"
 
     os.system(f"yt-dlp {ytDlpPrefix} {url}")
