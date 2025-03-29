@@ -4,16 +4,15 @@ import os
 
 
 if argv[1] == "-h" or argv[1] == "-help" :
-    print("dm {url} -dm || -dowloadMusic = dowload audio file")
+    print("dm -d {url} -dm || -dowloadMusic = dowload audio file")
 
     print("\n-dv || -dowloadVideo = dowload video")
-    print("exemple = dm {url} -dv = dowload video file")
+    print("exemple = dm -d {url} -dv = dowload video file")
 
     print("\n----------------------------------------------")
 
     print("\n -h || -help = viwe commands")
     print(" -v || -version = viwe version")
-    print(" -odm || -oldm = use old dm version")
 
     print("\n made by zag ^_^")
 
@@ -22,23 +21,16 @@ elif argv[1] == "-v" or argv[1] == "-version" :
     print("dm version - 0.2.1")
     print("made in 26.03.2025")
 
-elif argv[1] == "-odm" or argv[1] == "-oldm" :
+elif argv[1] == "-d" :
+
+    if argv[3] == "-dm" :
+
+        ytDlpPrefix = "-x --audio-format mp3 --embed-thumbnail --embed-metadata"
     
-    userCountMusic =  int(input('count dowload music : '))
-    setProp = " -x --audio-format mp3 --embed-thumbnail --embed-metadata "
-
-    while userCountMusic > 0 :
-        url = input("input url: ")
-
-        os.system(f"yt-dlp {setProp}  {url}")
-
-        userCountMusic = userCountMusic - 1
-
-
-else :
-
-    url = argv[1]
-
-    ytDlpPrefix = "-x --audio-format mp3 --embed-thumbnail --embed-metadata"
+    elif argv[3] == "-dv" :
+        
+        ytDlpPrefix = "--embed-thumbnail --embed-metadata"
+        
+    url = argv[2]
 
     os.system(f"yt-dlp {ytDlpPrefix} {url}")
