@@ -19,7 +19,7 @@ if argv[1] == "-h" or argv[1] == "-help" :
 
 elif argv[1] == "-v" or argv[1] == "-version" :
     print("dm version - 0.2.1")
-    print("made in 26.03.2025")
+    print("made in 29.03.2025")
 
 elif argv[1] == "-d" :
 
