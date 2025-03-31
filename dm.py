@@ -28,8 +28,8 @@ if argv[1] == "-h" or argv[1] == "-help" :
 
 #version prefix
 elif argv[1] == "-v" or argv[1] == "-version" :
-    print("dm version - 0.2.1")
-    print("made in 29.03.2025")
+    print("dm version - 0.3")
+    print("made in 31.03.2025")
 
 #download prefix
 elif argv[1] == "-d" :
