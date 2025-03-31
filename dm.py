@@ -1,11 +1,16 @@
 from sys import argv
+from pathlib import Path
 
 import os
 import configparser
 
+#paths
+programmPaht = Path(__file__).resolve().parent
+configPath = programmPaht / "configDm.ini"
+
 #configurate file varibls
 config = configparser.ConfigParser()
-config.read("configDm.ini")
+config.read(configPath)
 
 if argv[1] == "-h" or argv[1] == "-help" :
     print("dm -d {url} -dm || -dowloadMusic = dowload audio file")
@@ -27,15 +32,14 @@ elif argv[1] == "-v" or argv[1] == "-version" :
 
 elif argv[1] == "-d" :
 
-    if argv[3] == "-dm" :
+    if argv[2] == "-dm" :
 
         ytDlpPrefix = config["Prefix"]["DmPrefix"]
     
-    elif argv[3] == "-dv" :
+    elif argv[2] == "-dv" :
         
         ytDlpPrefix = config["Prefix"]["DvPrefix"]
         
-    url = argv[2]
+    url = argv[3]
 
     os.system(f"yt-dlp {ytDlpPrefix} {url}")
-
