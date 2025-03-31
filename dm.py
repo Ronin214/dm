@@ -12,6 +12,7 @@ configPath = programmPaht / "configDm.ini"
 config = configparser.ConfigParser()
 config.read(configPath)
 
+#help command
 if argv[1] == "-h" or argv[1] == "-help" :
     print("dm -d {url} -dm || -dowloadMusic = dowload audio file")
 
@@ -25,17 +26,19 @@ if argv[1] == "-h" or argv[1] == "-help" :
 
     print("\n made by zag ^_^")
 
-
+#version prefix
 elif argv[1] == "-v" or argv[1] == "-version" :
     print("dm version - 0.2.1")
     print("made in 29.03.2025")
 
+#download prefix
 elif argv[1] == "-d" :
 
+    #download music
     if argv[2] == "-dm" :
 
         ytDlpPrefix = config["Prefix"]["DmPrefix"]
-    
+    #download video
     elif argv[2] == "-dv" :
         
         ytDlpPrefix = config["Prefix"]["DvPrefix"]
