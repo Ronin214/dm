@@ -3,6 +3,9 @@ from sys import argv
 import os
 import configparser
 
+#configurate file varibls
+config = configparser.ConfigParser()
+config.read("configDm.ini")
 
 if argv[1] == "-h" or argv[1] == "-help" :
     print("dm -d {url} -dm || -dowloadMusic = dowload audio file")
@@ -26,11 +29,11 @@ elif argv[1] == "-d" :
 
     if argv[3] == "-dm" :
 
-        ytDlpPrefix = "-x --audio-format mp3 --embed-thumbnail --embed-metadata"
+        ytDlpPrefix = config["Prefix"]["DmPrefix"]
     
     elif argv[3] == "-dv" :
         
-        ytDlpPrefix = "--embed-thumbnail --embed-metadata"
+        ytDlpPrefix = config["Prefix"]["DvPrefix"]
         
     url = argv[2]
 
