@@ -4,13 +4,12 @@ from pathlib import Path
 import os
 import configparser
 
-#paths
+#path
 programmPaht = Path(__file__).resolve().parent
-configPath = programmPaht / "configDm.ini"
 
 #configurate file varibls
 config = configparser.ConfigParser()
-config.read(configPath)
+config.read(programmPaht/"configDm.ini")
 
 #help command
 def helpCommand() :
