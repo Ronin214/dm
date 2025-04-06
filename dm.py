@@ -13,7 +13,7 @@ config = configparser.ConfigParser()
 config.read(configPath)
 
 #help command
-if argv[1] == "-h" or argv[1] == "-help" :
+def helpCommand() :
     print("dm -d {url} -dm || -dowloadMusic = dowload audio file")
 
     print("\n-dv || -dowloadVideo = dowload video")
@@ -26,9 +26,12 @@ if argv[1] == "-h" or argv[1] == "-help" :
 
     print("\n made by zag ^_^")
 
+if argv[1] == "-h" or argv[1] == "-help" :
+    helpCommand()
+
 #version prefix
 elif argv[1] == "-v" or argv[1] == "-version" :
-    print("dm version - 0.3")
+    print("dm version B-3.1")
     print("made in 31.03.2025")
 
 #download prefix
@@ -46,3 +49,6 @@ elif argv[1] == "-d" :
     url = argv[3]
 
     os.system(f"yt-dlp {ytDlpPrefix} {url}")
+
+else :
+    helpCommand()
