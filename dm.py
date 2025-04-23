@@ -5,12 +5,9 @@ import os
 import configparser
 import time
 
-#path
-programmPaht = Path(__file__).resolve().parent
-
 #configurate file varibls
 config = configparser.ConfigParser()
-config.read(programmPaht/"configDm.ini")
+config.read(Path(__file__).resolve().parent/"configDm.ini")
 
 #help command
 def helpCommand() :
